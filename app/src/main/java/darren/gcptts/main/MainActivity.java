@@ -1,6 +1,6 @@
 package darren.gcptts.main;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,7 +15,6 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import darren.gcptts.BuildConfig;
 import darren.gcptts.R;
 import darren.googlecloudtts.GoogleCloudTTS;
 import darren.googlecloudtts.GoogleCloudTTSFactory;
@@ -85,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         initViewValues();
 
-        GoogleCloudTTS googleCloudTTS = GoogleCloudTTSFactory.create(BuildConfig.API_KEY);
+        GoogleCloudTTS googleCloudTTS = GoogleCloudTTSFactory.create("AIzaSyDsbbrhIf3JtvvWsT1Kgcpe4L7JP4HI5-g");
         mMainViewModel = new MainViewModel(getApplication(), googleCloudTTS);
 
         onLoading();

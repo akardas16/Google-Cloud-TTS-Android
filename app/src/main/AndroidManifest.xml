@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="darren.gcptts">
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,15 +14,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
         <activity
             android:name=".main.MainActivity"
-            android:screenOrientation="portrait">
+            android:exported="true"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".main.ListenVoiceActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".CloudSpeechService" />
     </application>
 
 </manifest>
